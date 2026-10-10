@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.toolchain/
+dist/
+build/
+*.egg-info/
+memory.json
+proxy.log

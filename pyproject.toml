@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shadowtrace-arena"
+version = "0.4.0"
+description = "Original CTF operations workbench with multi-backend tools, Codex packs, and adaptive relay."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "ShadowTrace Arena contributors"}]
+dependencies = ["httpx>=0.27,<1"]
+
+[project.scripts]
+shadowtrace = "shadowtrace_arena.cli:main"
+shadowtrace-control = "shadowtrace_arena.control_center:main"
+
+[tool.setuptools.packages.find]
+include = ["shadowtrace_arena*"]
+
+[tool.setuptools.package-data]
+shadowtrace_arena = [
+  "data/*.md",
+  "data/skillpacks/*/*.md",
+  "data/vendor/*.md",
+  "data/vendor/*.zip",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+extend-exclude = [".toolchain", ".venv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
