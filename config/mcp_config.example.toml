@@ -1,0 +1,17 @@
+# Replace both C:/path placeholders before copying this block to Codex config.toml.
+[mcp_servers.shadowtrace_arena]
+command = "python"
+args = [
+  "C:/path/to/shadowtrace-arena/mcp_server.py",
+  "--root",
+  "C:/path/to/ctf-workspace",
+]
+startup_timeout_sec = 20
+
+# Full capability mode: add these arguments after the workspace path.
+# "--enable-execution",
+# "--backend",
+# "auto",
+#
+# Available backends: auto, local, wsl, docker, ssh.
+# SSH additionally requires: "--ssh-target", "user@lab-host".
